@@ -11,7 +11,8 @@ public interface UserService {
     AppUserDto getUserByUsername(String username);
     AppUserDto getUserByEmail(String email);
     boolean existUserByUsername(String username);
-    boolean existUserByEmil(String email);
+    boolean existUserByEmail(String email);
     AppUserDto getUserByUserId(UUID userId);
+
 
 }

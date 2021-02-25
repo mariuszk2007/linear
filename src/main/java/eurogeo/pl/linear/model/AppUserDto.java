@@ -33,6 +33,8 @@ public class AppUserDto  implements Serializable {
     @NotNull
     private String password;
 
+    private String token;
+
     @Builder.Default
     private Set<RoleDto> roles = new HashSet<>();
 }

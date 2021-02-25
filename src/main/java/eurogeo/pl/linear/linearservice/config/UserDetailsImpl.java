@@ -19,13 +19,15 @@ public class UserDetailsImpl implements UserDetails {
     private String username;
     private String email;
     private String password;
+    private String token;
     private Collection<? extends GrantedAuthority> authorities;
 
-    private UserDetailsImpl(UUID id, String username, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+    private UserDetailsImpl(UUID id, String username, String email, String password, String token, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.token = token;
         this.authorities = authorities;
     }
     public static UserDetailsImpl build(AppUser appUser){
@@ -37,6 +39,7 @@ public class UserDetailsImpl implements UserDetails {
                 appUser.getUsername(),
                 appUser.getEmail(),
                 appUser.getPassword(),
+                appUser.getToken(),
                 authorities );
     }
 
